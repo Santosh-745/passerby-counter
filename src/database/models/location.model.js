@@ -1,4 +1,4 @@
-import { DataTypes, literal } from 'sequelize';
+import { DataTypes } from 'sequelize';
 
 const locationModel = (sequelize) => {
     sequelize.define('Location', {
@@ -11,6 +11,22 @@ const locationModel = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        inCount: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
+        },
+        outCount: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
+        },
+        totalCount: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
+        },
+        resetTimestamp: {
+            type: DataTypes.BIGINT,
+            allowNull: true,
+        }
     }, {
         tableName: 'locations',
         timestamps: false,
