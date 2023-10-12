@@ -23,6 +23,10 @@ const locationTimesheetModel = (sequelize) => {
             type: DataTypes.INTEGER,
             defaultValue: 0,
         },
+        totalCount: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
+        },
         locationId: {
             type: DataTypes.INTEGER,
             references: {
